@@ -5,8 +5,8 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 import pickle
 
-SPOTIFY_CLIENT_ID = '5192c05c7bc744eba79e9721094a619d'
-SPOTIFY_CLIENT_SECRET = '692ef3eef6ff4a639f520b7c0c267c0e'
+SPOTIFY_CLIENT_ID = '********************************'
+SPOTIFY_CLIENT_SECRET = '********************************'
 
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET))
 
