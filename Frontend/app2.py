@@ -18,8 +18,8 @@ from kivymd.uix.swiper import MDSwiper, MDSwiperItem
 
 from Frontend.FrontendUtils import ServerPlaylistAnalysis, searchResultsPlaylists
 
-SPOTIFY_CLIENT_ID = '0fcd6809776648a39887d531b7c31653'
-SPOTIFY_CLIENT_SECRET = 'aa476771bb4b4a96a8f5f648a39e3ef3'
+SPOTIFY_CLIENT_ID = '********************************'
+SPOTIFY_CLIENT_SECRET = '********************************'
 
 kivy.require('2.0.0')
 
