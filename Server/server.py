@@ -6,8 +6,8 @@ import spotipy
 
 from Server.LRUcache import LRUCache
 
-SPOTIFY_CLIENT_ID = '0fcd6809776648a39887d531b7c31653'
-SPOTIFY_CLIENT_SECRET = 'aa476771bb4b4a96a8f5f648a39e3ef3'
+SPOTIFY_CLIENT_ID = '********************************'
+SPOTIFY_CLIENT_SECRET = '********************************'
 
 spotify = spotipy.Spotify(client_credentials_manager=spotipy.SpotifyClientCredentials(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET))
 dataCache = LRUCache(50)
