@@ -35,8 +35,6 @@ class DriveSafe(MDApp):
         self.screen_manager = ScreenManager()
         self.MainScreen = MDScreen(name='main', r=25 / 255, g=20 / 255, b=20 / 255)
         self.table_elements = []
-        self.spotify = spotipy.Spotify(
-            client_credentials_manager=spotipy.SpotifyClientCredentials(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET))
         scope = "user-library-read"
         self.spotify = spotipy.Spotify(
             auth_manager=spotipy.SpotifyOAuth(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET,
@@ -95,7 +93,6 @@ class DriveSafe(MDApp):
 
         self.resultLabel = MDLabel(
             pos_hint={"center_x": .5, "center_y": .75},
-            text="[size=48][color=#1DB954][font=Frontend/SpotifyFonts/Montserrat-Bold] ...[/font][/color][/size]",
             markup=True,
             halign="center",
             size_hint=(1, 0.1)
@@ -138,7 +135,7 @@ class DriveSafe(MDApp):
         self.screen_manager.add_widget(self.MainScreen)
         self.screen_manager.add_widget(self.ResultScreen)
         self.screen_manager.add_widget(self.ConnectionErrorScreen)
-        self.establishConnection(None)
+        self.establishConnection()
 
         return self.screen_manager
 
@@ -166,9 +163,6 @@ class DriveSafe(MDApp):
                 self.swiperItems.append(item)
                 self.tracks[count] = r[3]
                 count += 1
-            # if len(results) == 1:
-            #     item = MDSwiperItem(orientation="vertical")
-            #     self.swiper.add_widget(item)
 
     def computeResult(self, garbage=None):
         playlist_id = self.tracks[self.swiper.get_current_index()]
